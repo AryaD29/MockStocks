@@ -13,7 +13,7 @@ window.onload = function () {
         label: "Prices",
         data: [],
         fill: false,
-        borderColor: "green",
+        borderColor: "rgba(75, 192, 192, 1)",
         tension: 0.1,
       },
     ],
@@ -48,7 +48,7 @@ window.onload = function () {
     if (data.datasets[0].data.length > 30) data.datasets[0].data.shift();
 
     stockChart.update();
-    renderPortfolio(); 
+    renderPortfolio();
   }
 
   setInterval(updateChart, 3000);
@@ -93,10 +93,10 @@ window.onload = function () {
   window.confirmBuy = function () {
     if (selectedBuy) {
       const price = selectedBuy.price;
-      if (price > 110) {
+      if (price > 102) {
         alert(`Stock is overpriced! It is not advised to purchase.`);
-      } else if (price < 90) {
-        alert(`Stock is relatively cheap!`);
+      } else if (price < 98) {
+        alert(`Stock is relatively cheap! It is a good time to purchase.`);
       }
 
       portfolio.push(selectedBuy);
@@ -134,5 +134,3 @@ window.onload = function () {
     });
   }
 };
-
-
