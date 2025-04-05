@@ -48,7 +48,7 @@ window.onload = function () {
     if (data.datasets[0].data.length > 30) data.datasets[0].data.shift();
 
     stockChart.update();
-    renderPortfolio(); // 🟢 Update profit/loss live
+    renderPortfolio(); 
   }
 
   setInterval(updateChart, 3000);
